@@ -7,10 +7,10 @@
 clc
 clear
 j=1;
-for i=0:5000:250000
+for i=0:5000:250000  % you can change the loop step here.
 %randbitlsbhide('f:\lenna.bmp',i,'f:\lennahided.bmp',1234);
-bitlsbhide('e:\mumu.bmp',i,'e:\lennahide.bmp');
-mask=[1 0 1 0 1 ];
+bitlsbhide('e:\mumu.bmp',i,'e:\lennahide.bmp'); % Do LSB embed.
+mask=[1 0 1 0 1 ]; % this mask is also related with the image size, if 500*500, then the mask length must be the multiple of 5.
 [r,s,u]=compare('e:\lennahide.bmp',mask);
 rplus(1,j)=r/(r+s+u);
 splus(1,j)=s/(r+s+u);
@@ -42,7 +42,7 @@ if abs(rootans(1,1))>abs(rootans(2,1))
 else
     finalans=rootans(1,1);
 end
-result(1,j)=finalans/(finalans-0.5);
+result(1,j)=finalans/(finalans-0.5); % Here we are trying to estimate the embed rate.
 j=j+1;
 end
 a=[rmins,fliplr(rmins2)];
@@ -57,5 +57,5 @@ subplot(121);
 plot(i,a);hold on;grid on;
 plot(i,b);hold on;
 plot(i,c);hold on;
-plot(i,d);hold off;axis([0 1 0 1]);title('RS ·ÖÎöÍ¼');xlabel('Ç¶ÈëÂÊ');ylabel('×Ü×éÊı±ÈÀı');
-subplot(122);plot(j,result);axis([0 1 0 1]);grid on;title('ÃÜĞ´ÂÊ');xlabel('ÃÜĞ´ÂÊ');ylabel('¹À¼ÆÇ¶ÈëÂÊ');
+plot(i,d);hold off;axis([0 1 0 1]);title('RS åˆ†æå›¾');xlabel('åµŒå…¥ç‡');ylabel('æ€»ç»„æ•°æ¯”ä¾‹');
+subplot(122);plot(j,result);axis([0 1 0 1]);grid on;title('å¯†å†™ç‡');xlabel('å¯†å†™ç‡');ylabel('ä¼°è®¡åµŒå…¥ç‡');
