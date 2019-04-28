@@ -7,3 +7,7 @@ This is a Matlab program for steganalysis, It can draw the plot to show the rela
 
 ## How to run it
 Start the it with compute_plot, and you may need to specific the image name and the increase step of the embed rate.
+
+
+## Result
+![alt text](https://raw.githubusercontent.com/matthewgao/RS-analysis/master/plot.bmp)
